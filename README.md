@@ -1,1 +1,1 @@
-# salesbeez-admin
+# salesbeez-api
