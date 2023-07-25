@@ -223,3 +223,29 @@ exports.UpdateAdmin = catchAsyncErrors(async (req, res, next) => {
     });
   }
 });
+
+exports.getAllAdmin = catchAsyncErrors(async (req, res) => {
+  try {
+    const admin = await Admin.find();
+    res.status(200).json({
+      success: true,
+      admins: admin,
+    });
+  } catch (error) {
+    res.status(501).json({
+      success: false,
+      massage: error._message,
+      error: error,
+    });
+    res.status(400).json({
+      success: false,
+      massage: error._message,
+      error: error,
+    });
+    res.status(500).json({
+      success: false,
+      massage: error._message,
+      error: error,
+    });
+  }
+});

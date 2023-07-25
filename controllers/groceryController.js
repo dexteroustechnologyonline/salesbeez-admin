@@ -124,6 +124,7 @@ exports.myGroceryAll = catchAsyncErrors(async (req, res) => {
       grocery.options.map((option) => {
         option.maximumQuantity = 10;
       });
+      // grocery.options[0].discounts = Math.round(((options[0].mrp - options[0].sellingPrice) * 100) / mrp);
       grocery = await Grocery.findByIdAndUpdate(groceryid, grocery, {
         new: true,
         useFindAndModify: false,

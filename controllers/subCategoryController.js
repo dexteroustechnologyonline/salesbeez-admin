@@ -376,57 +376,7 @@ exports.SlugUrlExist = catchAsyncErrors(
           error:error
         });
     }
-  });
-
-
-exports.mySubcategoryAll = catchAsyncErrors(async (req, res) => {
-    try {
-      const subcategories = await Subcategory.find();
-      for (let index = 0; index < subcategories.length; index++) {
-        const subcategoryid = subcategories[index]._id;
-        let subcategory = await Subcategory.findById(subcategoryid);
-
-        if (!subcategory) {
-          return res.status(500).json({
-            success: false,
-            message: "grocery not found",
-          });
-        }
-        subcategory.priority = 10;
-        // grocery.options.map((option) => {
-        //   option.maximumQuantity = 10;
-        // });
-        subcategory = await Subcategory.findByIdAndUpdate(
-          subcategoryid,
-          subcategory,
-          {
-            new: true,
-            useFindAndModify: false,
-            runValidators: true,
-          }
-        );
-      }
-
-      res.status(200).json({
-        success: true,
-        subcategories: subcategories,
-      });
-    } catch (error) {
-      res.status(501).json({
-        success: false,
-        error: error,
-      });
-      res.status(400).json({
-        success: false,
-        error: error,
-      });
-      res.status(500).json({
-        success: false,
-        massage: error._message,
-        error: error,
-      });
-    }
-  });
+});
 
 
 

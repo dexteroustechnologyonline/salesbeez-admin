@@ -35,6 +35,26 @@ const adminSchema = mongoose.Schema({
     type: String,
   },
 
+  superAdmin: {
+    type: Boolean,
+    default: false,
+  },
+  productAddTeam: {
+    type: Boolean,
+    default: true,
+  },
+  productEditTeam: {
+    type: Boolean,
+    default: false,
+  },
+  orderTeam: {
+    type: Boolean,
+    default: false,
+  },
+  agentAdminTeam: {
+    type: Boolean,
+    default: false,
+  },
   role: {
     type: String,
     default: "admin",

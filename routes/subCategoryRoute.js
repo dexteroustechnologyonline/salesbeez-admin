@@ -10,14 +10,12 @@ const {
   DeleteSubCategory,
   getsubCategorybyId,
   UploadnewImag,
-  SlugUrlExist,
-  mySubcategoryAll,
+  SlugUrlExist
 } = require("../controllers/subCategoryController");
 
 const router = express.Router();
 router.route("/new").post(createSubCategory);
 router.route("/all").get(getAllSubCategory);
-router.route("/updateall").get(mySubcategoryAll);
 
 
 router.route("/slugurl/:slugurl").get(SlugUrlExist);

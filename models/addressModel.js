@@ -18,6 +18,7 @@ const addressSchema = new mongoose.Schema(
       },
       lastName: {
         type: String,
+        required: [true, "Please enter your lastName name"],
       },
     },
 

@@ -233,7 +233,68 @@ const groceryOrderSchema = mongoose.Schema(
       // // required: true,
       default: 0,
     },
+    remark: {
+      BookedOrdersRemark: {
+        type: String,
+        default: "Your Order has been placed",
+        // default: "",
+      },
+      OrderprocessingRemark: {
+        type: String,
+        default: "Team has processed your order",
+      },
+      OrderDispatchedRemark: {
+        type: String,
+        default: "Your has been packed up by courier partner",
+      },
+      OutfordeliveryRemark: {
+        type: String,
+        default: "Your item is out for delivery",
+      },
+      OrderDeliveredRemark: {
+        type: String,
+        default: "Your item has been delivered",
+      },
+      OrderCancelRemark: {
+        type: String,
+        default: "Your delivery is cancelled",
+      },
+      OrderDeliveredAgentRemark: {
+        type: String,
+      },
+    },
 
+    OrderprocessDate: {
+      OrderprocessingDate: {
+        type: Date,
+        // default: Date.now(),
+      },
+      OrderDispatchedDate: {
+        type: Date,
+        // default: Date.now(),
+      },
+      OutfordeliveryDate: {
+        type: Date,
+        // default: Date.now(),
+      },
+      OrderDeliveredDate: {
+        type: Date,
+        // default: Date.now(),
+      },
+      OrderCancelledDate: {
+        type: Date,
+        // default: Date.now(),
+      },
+      OrderCancelledDate1: {
+        type: Date,
+        // default: Date.now(),
+      },
+      // OrderprocessingDate: Date,
+      // OrderDispatchedDate: Date,
+      // OutfordeliveryDate: Date,
+      // OrderDeliveredDate: Date,
+      // OrderCancelledDate: Date,
+    },
     expectedDelDate: Date,
     deliveredAt: Date,
   },

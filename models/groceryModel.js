@@ -48,7 +48,7 @@ const groceySchema = mongoose.Schema({
     required: [true, "Please enter brand name"],
   },
   tags: {
-    universatTag: {
+     universatTag: {
       type: String,
       default: "",
     },
@@ -70,14 +70,16 @@ const groceySchema = mongoose.Schema({
   },
   ingredient: {
     type: String,
+   
   },
   productInfo: {
     type: String,
   },
   hsnCode: {
     type: String,
-    required: true,
+    required:true,
   },
+
 
   dealoftheday: {
     type: Boolean,
@@ -110,7 +112,7 @@ const groceySchema = mongoose.Schema({
   },
   cartQuantity: {
     type: Number,
-    default: 0,
+    default:0,
   },
 
   options: [
@@ -119,8 +121,8 @@ const groceySchema = mongoose.Schema({
         type: String,
         required: [true, "Please provide optionName"],
       },
-      skuCode: String,
-      barcode: String,
+      skuCode:String,
+      barcode:String,
 
       thumbnail: {
         type: String,
@@ -163,17 +165,16 @@ const groceySchema = mongoose.Schema({
       },
       cartQuantity: {
         type: Number,
-        default: 0,
-      },
-
-      maximumQuantity: {
-        type: Number,
-        default: 15,
+        default:0,
       },
       prime: {
         type: Boolean,
-        default: false,
+        default:false,
       },
+      maximumQuantity:{
+        type: Number,
+        default:15,
+      }
     },
   ],
 

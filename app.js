@@ -137,9 +137,6 @@ app.use("/api/v1/categorybanner", categorybanner);
 const productbanner = require('./routes/productBannerRoute');
 app.use("/api/v1/productbanner", productbanner);
 
-const subcatbanner = require('./routes/subCatBannerRoute');
-app.use("/api/v1/subcatbanner", subcatbanner);
-
 
 app.use(errorMiddleware);
 

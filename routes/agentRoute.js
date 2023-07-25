@@ -41,11 +41,9 @@ router.route("/pancard/:pancard").get(pancardExist);
 router.route("/refercode/:refercode").get(refercodeExist);
 router.route("/agentid/:mobile").get(agentdetailbyid);
 router.route("/downline/:mobile").get(downline);
-
 router.route("/adharcard").post(UploadAdhar);
 router.route("/pancard").post(UploadPan);
 router.route("/avatar").post(UploadAvatar);
 router.route("/UpdateagentbyMobile/:mobile").put(UpdateAgentbymobile);
 router.route("/:id").put(UpdateAgent);
-
 module.exports = router;

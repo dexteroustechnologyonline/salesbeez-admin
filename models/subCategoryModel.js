@@ -39,24 +39,21 @@ const subCategorySchema = mongoose.Schema({
   },
   thumbnail: {
     type: String,
-    required: [true, "Please provide thumbnail"],
+    required:[true, "Please provide thumbnail"],
   },
   icon: {
     type: String,
-    required: [true, "Please provide icon"],
+    required:[true, "Please provide icon"],
   },
   desktopicon: {
     type: String,
-    required: [true, "Please provide desktopicon"],
+    required:[true, "Please provide desktopicon"],
   },
-  banner: {
-    type: String,
-    required: [true, "Please provide banner"],
-  },
-  priority: {
-    type: Number,
-    default: 10,
-  },
+  banner: 
+    {
+      type: String,
+      required:[true, "Please provide banner"],
+    },
   createdAt: {
     type: Date,
     default: Date.now,
