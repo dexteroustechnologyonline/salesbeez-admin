@@ -31,7 +31,7 @@ const commissionSchema = new mongoose.Schema({
   },
   type: {
     type: String,
-    default: "Commission Earned",
+    default: "Incentive Earned",
   },
 
   createdAt: {

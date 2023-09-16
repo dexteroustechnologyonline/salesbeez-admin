@@ -20,7 +20,8 @@ const {
   findagentbyReferalCoderphonenum,
   loginAgentwithNumber,
   otpVerify,
-  UpdateAgentbymobile
+  UpdateAgentbymobile,
+  UpdateAllAgent
 } = require("../controllers/agentController");
 
 const router = express.Router();
@@ -32,7 +33,7 @@ router.route("/loginmobile").post(loginAgentwithNumber);
 router.route("/agentrefercode/:mobile").get(findagentbyReferalCoderphonenum);
 router.route("/agentlogin").post(agentLoginAdmin);
 router.route("/otplogin").post(otpVerify);
-
+router.route("/updateallagents").put(UpdateAllAgent);
 router.route("/convert/:refercode").get(coversion);
 router.route("/mobile/:mobile").get(mobileExist);
 router.route("/email/:email").get(emailExist);
@@ -46,4 +47,5 @@ router.route("/pancard").post(UploadPan);
 router.route("/avatar").post(UploadAvatar);
 router.route("/UpdateagentbyMobile/:mobile").put(UpdateAgentbymobile);
 router.route("/:id").put(UpdateAgent);
+
 module.exports = router;

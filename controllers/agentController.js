@@ -33,12 +33,49 @@ exports.registerAgent = catchAsyncErrors(async (req, res, next) => {
   }
 });
 
+
+
 exports.getAllAgent = catchAsyncErrors(async (req, res) => {
   try {
     const agents = await Agent.find();
     res.status(200).json({
       success: true,
       agents: agents,
+    });
+  } catch (error) {
+    res.status(501).json({
+      success: false,
+      massage: error._message,
+      error: error,
+    });
+    res.status(400).json({
+      success: false,
+      massage: error._message,
+      error: error,
+    });
+    res.status(500).json({
+      success: false,
+      massage: error._message,
+      error: error,
+    });
+  }
+});
+
+exports.UpdateAllAgent = catchAsyncErrors(async (req, res) => {
+  try {
+    const agents = await Agent.find();
+    for (let index = 0; index < agents.length; index++) {
+      let agent = agents[index];
+
+      agent = await Agent.findByIdAndUpdate(agent._id, {pinFeature:false}, {
+        new: true,
+        useFindAndModify: false,
+        runValidators: true,
+      });
+
+    }
+    res.status(200).json({
+      success: true,
     });
   } catch (error) {
     res.status(501).json({
@@ -594,6 +631,8 @@ exports.UpdateAgent = catchAsyncErrors(async (req, res, next) => {
 
 exports.UpdateAgentbymobile = catchAsyncErrors(async (req, res, next) => {
   try {
+    console.log(req.body);
+    console.log(req.params.mobile);
     let agent = await Agent.findOne({mobile:req.params.mobile});;
     if (!agent) {
       return res.status(500).json({

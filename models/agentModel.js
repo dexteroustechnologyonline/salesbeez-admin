@@ -13,7 +13,7 @@ const agentSchema = mongoose.Schema({
 
   lastname: {
     type: String,
-    default:"",
+    default: "",
     trim: true,
   },
   email: {
@@ -23,6 +23,11 @@ const agentSchema = mongoose.Schema({
   password: {
     type: String,
   },
+  pinFeature: {
+    type: Boolean,
+    default: false,
+  },
+
   gender: {
     type: String,
     default: "Male",
@@ -93,7 +98,6 @@ const agentSchema = mongoose.Schema({
     type: String,
     required: [true, "Please enter SponcerMob"],
   },
-
 
   wallet: {
     type: Number,

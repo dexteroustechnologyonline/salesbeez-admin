@@ -55,6 +55,9 @@ const bankwithdrawSchema = new mongoose.Schema({
     type: String,
     default: "Pending",
   },
+  TrasitionDate: {
+    type: String,
+  },
   createdAt: {
     type: Date,
     default: Date.now,

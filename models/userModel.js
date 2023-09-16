@@ -5,7 +5,6 @@ const jwt = require("jsonwebtoken");
 const crypto = require("crypto");
 
 const userSchema = new mongoose.Schema({
- 
   name: {
     type: String,
     required: [true, "Please Enter Your Name"],
@@ -13,7 +12,6 @@ const userSchema = new mongoose.Schema({
   },
   Lastname: {
     type: String,
-    required: [true, "Please Enter Your Name"],
     maxLength: [30, "Name cannot exceed 30 characters"],
   },
   email: {
@@ -32,30 +30,30 @@ const userSchema = new mongoose.Schema({
     default: false,
   },
   avatar: {
-      type: String,
-      default: "https://res.cloudinary.com/dh1fsseho/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1669977353/Avatar/avatar2_z6yynb.jpg",
-    },
-  
+    type: String,
+    default:
+      "https://res.cloudinary.com/dh1fsseho/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1669977353/Avatar/avatar2_z6yynb.jpg",
+  },
+
   role: {
     type: String,
     default: "user",
   },
   agentId: {
     type: String,
-   required: true,
-    
+    required: true,
   },
-  wallet:{
+  wallet: {
     type: Number,
-    default: 0
+    default: 0,
   },
-  cashback:{
+  cashback: {
     type: Number,
-    default: 0
+    default: 0,
   },
   coinBalance: {
     type: Number,
-    default: 0
+    default: 0,
   },
 
   createdAt: {

@@ -121,6 +121,11 @@ const groceryOrderSchema = mongoose.Schema(
       // // required: true,
       default: 0,
     },
+    walletAmountUsed: {
+      type: Number,
+      // // required: true,
+      default: 0,
+    },
     saving: {
       type: Number,
       // // required: true,
@@ -245,7 +250,7 @@ const groceryOrderSchema = mongoose.Schema(
       },
       OrderDispatchedRemark: {
         type: String,
-        default: "Your has been packed up by courier partner",
+        default: "Your order has been picked up by courier partner",
       },
       OutfordeliveryRemark: {
         type: String,
